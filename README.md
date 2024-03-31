@@ -18,4 +18,4 @@ Open a terminal and type the following command:
 ```bash
 notepad $PROFILE
 ```
-In the notepad, past the contents of `Microsoft.PowerShell_profile.ps1`
+In the notepad, paste the contents of `Microsoft.PowerShell_profile.ps1`
