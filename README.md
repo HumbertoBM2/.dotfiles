@@ -3,6 +3,19 @@ Dotfiles
 
 ## Windows
 
+### Nvim
+
+Nvim folder needs to be located at: 
+
 ```bash
-git clone https://github.com/HumbertoBM2/.dotfiles.git $env:LOCALAPPDATA\nvim
+$env:LOCALAPPDATA\nvim
 ```
+
+### PowerShell
+
+Open a terminal and type the following command:
+
+```bash
+notepad $PROFILE
+```
+In the notepad, past the contents of `Microsoft.PowerShell_profile.ps1`
