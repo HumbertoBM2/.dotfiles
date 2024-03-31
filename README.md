@@ -3,5 +3,5 @@ Dotfiles
 
 
 ```bash
-git clone $env:LOCALAPPDATA\nvim
+git clone https://github.com/HumbertoBM2/.dotfiles.git $env:LOCALAPPDATA\nvim
 ```
