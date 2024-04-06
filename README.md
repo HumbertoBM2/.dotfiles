@@ -3,9 +3,9 @@ Dotfiles
 
 ## Windows
 
-### Nvim
+### Neovim
 
-Nvim folder needs to be located at: 
+Nvim config folder needs to be located at: 
 
 ```bash
 $env:LOCALAPPDATA\nvim
