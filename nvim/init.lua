@@ -15,3 +15,4 @@ vim.opt.rtp:prepend(lazypath)
 require("vim-options")
 require("lazy").setup("plugins")
 vim.cmd("language en_US")
+vim.g.moonflyItalics = false

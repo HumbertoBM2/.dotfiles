@@ -1,6 +1,6 @@
 cls
 #Set-PSReadLineOption -PredictionViewStyle ListView
-
+$pSStyle.FileInfo.Directory=""
 # PSReadLine
 Set-PSReadLineOption -EditMode Emacs
 Set-PSReadLineOption -BellStyle None
