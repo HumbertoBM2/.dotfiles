@@ -5,6 +5,7 @@ return {
     config = function()
         vim.g.tex_flavor = "latex"
         vim.g.tex_comment_nospell = 1
+        vim.g.vimtex_view_general_viewer = 'okular'
         vim.g.vimtex_compiler_latexmk = {
             ["options"] = {
                 "-file-line-error",
