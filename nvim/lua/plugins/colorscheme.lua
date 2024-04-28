@@ -1,23 +1,47 @@
 return {
-    [1] = "rebelot/kanagawa.nvim",
+    [1] = "folke/tokyonight.nvim",
+    lazy = false,
     priority = 1000,
     opts = {
-        overrides = function()
-            local palette = require("kanagawa.colors").setup().palette
-            return {
-                WinSeparator = { fg = "NONE" },
-                TelescopeBorder = { fg = palette.sumiInk0, bg = palette.sumiInk0 },
-                TelescopeNormal = { fg = palette.fujiWhite, bg = palette.sumiInk0 },
-                TelescopePromptBorder = { fg = palette.sumiInk4, bg = palette.sumiInk4 },
-                TelescopePromptNormal = { fg = palette.fujiWhite, bg = palette.sumiInk4 },
-                TelescopeSelection = { fg = palette.fujiWhite, bg = palette.sumiInk4 },
-                TelescopePreviewTitle = { fg = palette.sumiInk4, bg = palette.oniViolet },
-                TelescopePromptTitle = { fg = palette.sumiInk4, bg = palette.sakuraPink },
+        style = "night",
+        terminal_colors = true,
+        styles = {
+            comments = { italic = false },
+            keywords = { italic = false },
+        },
+        on_highlights = function(hl, c)
+            local prompt = "#2d3149"
+            hl.TelescopeNormal = {
+                bg = c.bg_dark,
+                fg = c.fg_dark,
+            }
+            hl.TelescopeBorder = {
+                bg = c.bg_dark,
+                fg = c.bg_dark,
+            }
+            hl.TelescopePromptNormal = {
+                bg = prompt,
+            }
+            hl.TelescopePromptBorder = {
+                bg = prompt,
+                fg = prompt,
+            }
+            hl.TelescopePromptTitle = {
+                bg = prompt,
+                fg = prompt,
+            }
+            hl.TelescopePreviewTitle = {
+                bg = c.bg_dark,
+                fg = c.bg_dark,
+            }
+            hl.TelescopeResultsTitle = {
+                bg = c.bg_dark,
+                fg = c.bg_dark,
             }
         end,
     },
     config = function(_, opts)
-        require("kanagawa").setup(opts)
-        vim.cmd.colorscheme("kanagawa")
+        require("tokyonight").setup(opts)
+        vim.cmd.colorscheme("tokyonight")
     end,
 }
