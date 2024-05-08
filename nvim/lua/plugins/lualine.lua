@@ -24,17 +24,26 @@ return {
             },
             lualine_c = {
                 {
-                    "fancy_cwd", substitute_home = true
-                }
+                    "filetype",
+                    icon_only = true,
+                    padding = {
+                        left = 1,
+                        right = 0,
+                    },
+                    separator = {
+                        right = "",
+                    },
+                },
+                "filename",
             },
             lualine_x = {
                 { "fancy_macro" },
-                { "fancy_diagnostics", symbols = { error = " ", warn = " ", info = " ", hint = " "  } },
+                { "fancy_diagnostics", symbols = { error = " ", warn = " ", info = " ", hint = " " } },
                 { "fancy_searchcount" },
                 { "location" },
             },
             lualine_y = {
-                { "filetype" }
+                { "progress" }
             },
             lualine_z = {
                 { "fancy_lsp_servers" }
