@@ -16,23 +16,25 @@ return {
         },
         sections = {
             lualine_a = {
-                { "fancy_mode", width = 3 }
+                { "fancy_mode" }
             },
             lualine_b = {
                 { "fancy_branch" },
                 { "fancy_diff" },
             },
             lualine_c = {
-                { "fancy_cwd", substitute_home = true }
+                {
+                    "fancy_cwd", substitute_home = true
+                }
             },
             lualine_x = {
                 { "fancy_macro" },
-                { "fancy_diagnostics" },
+                { "fancy_diagnostics", symbols = { error = " ", warn = " ", info = " ", hint = " "  } },
                 { "fancy_searchcount" },
-                { "fancy_location" },
+                { "location" },
             },
             lualine_y = {
-                { "fancy_filetype", ts_icon = "" }
+                { "filetype" }
             },
             lualine_z = {
                 { "fancy_lsp_servers" }
