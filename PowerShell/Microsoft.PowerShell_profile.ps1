@@ -1,4 +1,3 @@
-cls
 #Set-PSReadLineOption -PredictionViewStyle ListView
 $pSStyle.FileInfo.Directory=""
 # PSReadLine
@@ -6,7 +5,7 @@ Set-PSReadLineOption -EditMode Emacs
 Set-PSReadLineOption -BellStyle None
 Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
 Set-PSReadLineOption -PredictionSource History
-
+cls
 function prompt {
     $path = Get-Location
     $gitBranch = ""

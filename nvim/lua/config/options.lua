@@ -1,5 +1,8 @@
+vim.cmd("language en_US")
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
 vim.g.markdown_recommended_style = 0
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
@@ -26,7 +29,7 @@ vim.opt.hidden = true
 vim.opt.hlsearch = false
 vim.opt.ignorecase = true
 vim.opt.incsearch = true
-vim.opt.laststatus = 3
+vim.opt.laststatus = 0
 vim.opt.list = false
 vim.opt.mouse = "a"
 vim.opt.number = true
@@ -52,7 +55,7 @@ vim.opt.tabstop = 2
 vim.opt.termguicolors = true
 vim.opt.timeoutlen = 300
 vim.opt.undodir = "/tmp/nvim-undo"
-vim.opt.undofile = true
+vim.opt.undofile = false
 vim.opt.updatetime = 200
 vim.opt.wildignorecase = true
 vim.opt.winminwidth = 10
