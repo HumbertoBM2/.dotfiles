@@ -27,6 +27,7 @@ return {
                 treesitter_context = true,
                 vimwiki = true,
                 which_key = true,
+                noice = true,
             },
             highlight_overrides = {
                 all = function(colors)

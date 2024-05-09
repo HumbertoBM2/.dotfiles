@@ -16,7 +16,7 @@ return {
         },
         sections = {
             lualine_a = {
-                { "mode" }
+                { "fancy_mode" }
             },
             lualine_b = {
                 { "fancy_branch" },
@@ -34,20 +34,20 @@ return {
                         right = "",
                     },
                 },
-                "filename",
+                {
+                    "filename",
+                    path = 1
+                }
             },
             lualine_x = {
                 { "fancy_macro" },
                 { "fancy_diagnostics", symbols = { error = " ", warn = " ", info = " ", hint = " " } },
                 { "fancy_searchcount" },
-                { "location" },
+                { "fancy_lsp_servers"},
+                { "progress" },
             },
-            lualine_y = {
-                { "progress" }
-            },
-            lualine_z = {
-                { "fancy_lsp_servers" }
-            },
+            lualine_y = {},
+            lualine_z = {},
         }
     },
 }
