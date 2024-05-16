@@ -1,5 +1,5 @@
 return {
-    [1] = "lervag/vimtex",
+    "lervag/vimtex",
     lazy = false,
     tag = "v2.15",
     config = function()

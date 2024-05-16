@@ -8,7 +8,7 @@ return {
         options = {
             theme = "auto",
             component_separators = { left = "│", right = "│" },
-            section_separators = { left = "", right = "" },
+            section_separators = { left = '', right = '' },
             globalstatus = true,
             refresh = {
                 statusline = 100,
@@ -16,7 +16,7 @@ return {
         },
         sections = {
             lualine_a = {
-                { "fancy_mode" }
+                { "mode" }
             },
             lualine_b = {
                 { "fancy_branch" },
@@ -44,9 +44,10 @@ return {
                 { "fancy_diagnostics", symbols = { error = " ", warn = " ", info = " ", hint = " " } },
                 { "fancy_searchcount" },
                 { "fancy_lsp_servers"},
-                { "progress" },
             },
-            lualine_y = {},
+            lualine_y = {
+                { "progress"},
+            },
             lualine_z = {},
         }
     },
