@@ -41,9 +41,9 @@ return {
                 expander_highlight = "NeoTreeIndent",
             },
             icon = {
-                folder_closed = "",
-                folder_open = "",
-                folder_empty = "",
+                --folder_closed = "",
+                --folder_open = "",
+                --folder_empty = "",
             },
             modified = {
                 symbol = "●",
