@@ -7,8 +7,6 @@ return {
     opts = {
         options = {
             theme = "auto",
-            component_separators = { left = "│", right = "│" },
-            section_separators = { left = '', right = '' },
             globalstatus = true,
             refresh = {
                 statusline = 100,
@@ -36,19 +34,20 @@ return {
                 },
                 {
                     "filename",
-                    path = 1
                 }
             },
             lualine_x = {
                 { "fancy_macro" },
-                { "fancy_diagnostics", symbols = { error = " ", warn = " ", info = " ", hint = " " } },
+                { "fancy_diagnostics", symbols = { error = " ", warn = " ", info = " ", hint = "󰠠 " } },
                 { "fancy_searchcount" },
                 { "fancy_lsp_servers"},
             },
             lualine_y = {
+                { "location"}
+            },
+            lualine_z = {
                 { "progress"},
             },
-            lualine_z = {},
         }
     },
 }

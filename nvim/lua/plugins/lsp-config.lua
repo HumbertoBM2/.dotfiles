@@ -2,7 +2,15 @@ return {
     {
         "williamboman/mason.nvim",
         config = function()
-            require("mason").setup()
+            require("mason").setup({
+                ui = {
+                    icons = {
+                        package_installed = "✓",
+					    package_pending = "➜",
+					    package_uninstalled = "✗",
+                    }
+                }
+            })
         end
     },
     {
@@ -30,19 +38,19 @@ return {
 
             vim.fn.sign_define(
                 "DiagnosticSignError",
-                { text = "", texthl = "DiagnosticSignError", numhl = "DiagnosticSignError" }
+                { text = " ", texthl = "DiagnosticSignError", numhl = "DiagnosticSignError" }
             )
             vim.fn.sign_define(
                 "DiagnosticSignHint",
-                { text = "", texthl = "DiagnosticSignHint", numhl = "DiagnosticSignHint" }
+                { text = "󰠠 ", texthl = "DiagnosticSignHint", numhl = "DiagnosticSignHint" }
             )
             vim.fn.sign_define(
                 "DiagnosticSignInfo",
-                { text = "", texthl = "DiagnosticSignInfo", numhl = "DiagnosticSignInfo" }
+                { text = " " , texthl = "DiagnosticSignInfo", numhl = "DiagnosticSignInfo" }
             )
             vim.fn.sign_define(
                 "DiagnosticSignWarn",
-                { text = "", texthl = "DiagnosticSignWarn", numhl = "DiagnosticSignWarn" }
+                { text = " ", texthl = "DiagnosticSignWarn", numhl = "DiagnosticSignWarn" }
             )
 
             vim.diagnostic.config({

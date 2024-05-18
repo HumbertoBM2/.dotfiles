@@ -36,8 +36,8 @@ return {
                 last_indent_marker = "└",
                 highlight = "NeoTreeIndent",
                 with_expanders = true,
-                expander_collapsed = "",
-                expander_expanded = "",
+                expander_collapsed = "→",
+                expander_expanded = "↓",
                 expander_highlight = "NeoTreeIndent",
             },
             icon = {
