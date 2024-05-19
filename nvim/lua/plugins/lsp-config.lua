@@ -23,14 +23,36 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
+        lazy = false,
         config = function()
             local lspconfig = require("lspconfig")
-            lspconfig.lua_ls.setup({})
+            local capabilities = vim.lsp.protocol.make_client_capabilities()
+            capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+            lspconfig.lua_ls.setup({
+                settings = {
+                    Lua = {
+                        diagnostics = {
+                            globals = { "vim" },
+                            disable = { "different-requires" },
+                        },
+                    },
+                },
+            })
             lspconfig.clangd.setup({})
             lspconfig.pyright.setup({})
             lspconfig.eslint.setup({})
             lspconfig.rust_analyzer.setup({})
-            lspconfig.gopls.setup({})
+            lspconfig.gopls.setup({
+                filetypes = {"go", "gomod", "gowork", "gotmpl"},
+                settings = {
+                    env = {
+                        GOEXPERIMENT = "rangefunc",
+                    },
+                    formatting = {
+                        gofumpt = true,
+                    },
+                },
+            })
             lspconfig.texlab.setup({})
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
             vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
