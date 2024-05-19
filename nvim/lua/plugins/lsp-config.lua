@@ -6,8 +6,8 @@ return {
                 ui = {
                     icons = {
                         package_installed = "✓",
-					    package_pending = "➜",
-					    package_uninstalled = "✗",
+                        package_pending = "➜",
+                        package_uninstalled = "✗",
                     }
                 }
             })
@@ -43,7 +43,7 @@ return {
             lspconfig.eslint.setup({})
             lspconfig.rust_analyzer.setup({})
             lspconfig.gopls.setup({
-                filetypes = {"go", "gomod", "gowork", "gotmpl"},
+                filetypes = { "go", "gomod", "gowork", "gotmpl" },
                 settings = {
                     env = {
                         GOEXPERIMENT = "rangefunc",
@@ -68,7 +68,7 @@ return {
             )
             vim.fn.sign_define(
                 "DiagnosticSignInfo",
-                { text = " " , texthl = "DiagnosticSignInfo", numhl = "DiagnosticSignInfo" }
+                { text = " ", texthl = "DiagnosticSignInfo", numhl = "DiagnosticSignInfo" }
             )
             vim.fn.sign_define(
                 "DiagnosticSignWarn",
