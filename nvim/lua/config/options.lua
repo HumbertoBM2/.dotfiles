@@ -2,7 +2,7 @@ vim.cmd("language en_US")
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-
+vim.opt.guicursor = ""
 vim.g.markdown_recommended_style = 0
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
@@ -37,7 +37,7 @@ vim.opt.pumheight = 10
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 5
 vim.opt.shiftround = true
-vim.opt.shiftwidth = 2
+vim.opt.shiftwidth = 4
 vim.opt.shortmess:append({ W = true, I = true, c = true, s = true, F = true, C = true })
 vim.opt.showmode = false
 vim.opt.showtabline = 0
@@ -45,13 +45,13 @@ vim.opt.sidescrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.smartcase = true
 vim.opt.smartindent = true
-vim.opt.softtabstop = 2
+vim.opt.softtabstop = 4
 vim.opt.spelllang = { "en" }
 vim.opt.splitbelow = true
 vim.opt.splitkeep = "screen"
 vim.opt.splitright = true
 vim.opt.swapfile = false
-vim.opt.tabstop = 2
+vim.opt.tabstop = 4
 vim.opt.termguicolors = true
 vim.opt.timeoutlen = 300
 vim.opt.undodir = "/tmp/nvim-undo"
