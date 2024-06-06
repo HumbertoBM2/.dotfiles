@@ -1,26 +1,18 @@
 return {
     "nvim-lualine/lualine.nvim",
-    dependencies = {
-        "nvim-tree/nvim-web-devicons",
-        "meuter/lualine-so-fancy.nvim",
-    },
+    dependencies = "nvim-tree/nvim-web-devicons",
     opts = {
         options = {
-            theme = "auto",
             section_separators = "",
             component_separators = "│",
             globalstatus = true,
-            refresh = {
-                statusline = 100,
-            },
         },
         sections = {
-            lualine_a = {
-                { "mode" }
-            },
+            lualine_a = { "mode" },
             lualine_b = {
-                { "fancy_branch" },
-                { "fancy_diff" },
+                "branch",
+                "diff",
+                "diagnostics",
             },
             lualine_c = {
                 {
@@ -34,22 +26,24 @@ return {
                         right = "",
                     },
                 },
-                {
-                    "filename",
-                }
+                "filename",
             },
             lualine_x = {
-                { "fancy_macro" },
-                { "fancy_diagnostics", symbols = { error = " ", warn = " ", info = " ", hint = "󰠠 " } },
-                { "fancy_searchcount" },
-                { "fancy_lsp_servers"},
+                function()
+                    local count
+                    if (vim.fn.mode()):lower() == "v" then
+                        count = vim.fn.wordcount().visual_words
+                    else
+                        count = vim.fn.wordcount().words
+                    end
+                    return ("%sW"):format(count)
+                end,
             },
-            lualine_y = {
-                { "location"}
-            },
-            lualine_z = {
-                { "progress"},
-            },
-        }
+            lualine_y = { "progress" },
+            lualine_z = { "location" },
+        },
+        extensions = {
+            "lazy",
+        },
     },
 }
