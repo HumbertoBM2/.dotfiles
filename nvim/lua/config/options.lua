@@ -2,7 +2,7 @@ vim.cmd("language en_US")
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.opt.guicursor = ""
+--vim.opt.guicursor = ""
 vim.g.markdown_recommended_style = 0
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
