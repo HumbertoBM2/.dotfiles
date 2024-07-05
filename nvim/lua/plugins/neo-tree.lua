@@ -70,7 +70,7 @@ return {
         },
         commands = {},
         window = {
-            position = "left",
+            position = "right",
             width = 34,
             mappings = {
                 ["o"] = "open",
