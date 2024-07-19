@@ -70,7 +70,7 @@ return {
         },
         commands = {},
         window = {
-            position = "right",
+            position = "left",
             width = 34,
             mappings = {
                 ["o"] = "open",
@@ -143,7 +143,7 @@ return {
             },
         },
         source_selector = {
-            winbar = true,
+            winbar = false,
             sources = {
                 { source = "filesystem", display_name = "   Files " },
                 { source = "buffers", display_name = "   Bufs " },
