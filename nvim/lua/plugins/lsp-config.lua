@@ -9,7 +9,8 @@ return {
                         package_pending = "➜",
                         package_uninstalled = "✗",
                     }
-                }
+                },
+                ensure_installed = {"black", "clang-format", "gofumpt", "ltex"}
             })
         end
     },
@@ -17,7 +18,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "clangd", "pyright", "eslint", "rust_analyzer", "gopls", "texlab" }
+                ensure_installed = { "lua_ls", "clangd", "pyright", "eslint", "rust_analyzer", "gopls", "texlab",}
             })
         end
     },
