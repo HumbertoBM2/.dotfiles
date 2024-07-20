@@ -1,11 +1,34 @@
 return {
-    {
-        "bluz71/vim-moonfly-colors",
-        lazy = false,
-        priority = 1000,
-        config = function(plugin)
-            vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
-            vim.cmd [[colorscheme moonfly]]
-        end
-    }
+    "tiagovla/tokyodark.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+        custom_highlights = function(hl, p)
+            return {
+                ["LspInlayHint"] = { bg = "#1C1C2A", fg = "#9AA0A7" },
+                ["@module"] = { link = "TSType" },
+                ["@property"] = { link = "Identifier" },
+                ["@variable"] = { fg = "#Afa8ea" },
+                ["@lsp.type.variable"] = { fg = "#Afa8ea" },
+                ["FloatTitle"] = { link = "Blue" },
+                ["TelescopeBorder"] = { link = "TSType" },
+                ["TelescopePreviewBorder"] = { fg = "#4A5057" },
+                ["TelescopePreviewTitle"] = { link = "Blue" },
+                ["TelescopePromptBorder"] = { fg = "#4A5057" },
+                ["TelescopePromptTitle"] = { link = "Blue" },
+                ["TelescopeResultsBorder"] = { fg = "#4A5057" },
+                ["TelescopeResultsTitle"] = { link = "Blue" },
+                ["CmpItemKindCopilot"] = { fg = "#6CC644" },
+                ["NoiceLspProgressSpinner"] = { bg = "#1C1C2A" },
+                ["NoiceLspProgressClient"] = { bg = "#1C1C2A" },
+                ["NoiceLspProgressTitle"] = { bg = "#1C1C2A" },
+                ["NoiceMini"] = { bg = "#1C1C2A" },
+                ["NoiceCmdlineIconSearch"] = { link = "Blue" },
+            }
+        end,
+    },
+    config = function(_, opts)
+        require("tokyodark").setup(opts)
+        require("tokyodark").colorscheme()
+    end,
 }
