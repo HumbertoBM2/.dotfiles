@@ -10,7 +10,7 @@ return {
                         package_uninstalled = "✗",
                     }
                 },
-                ensure_installed = {"black", "clang-format", "gofumpt", "ltex"}
+                ensure_installed = { "black", "clang-format", "ltex" }
             })
         end
     },
@@ -18,7 +18,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "clangd", "pyright", "eslint", "rust_analyzer", "gopls", "texlab",}
+                ensure_installed = { "lua_ls", "clangd", "pyright", "eslint", "rust_analyzer", "texlab", }
             })
         end
     },
@@ -43,17 +43,6 @@ return {
             lspconfig.pyright.setup({})
             lspconfig.eslint.setup({})
             lspconfig.rust_analyzer.setup({})
-            lspconfig.gopls.setup({
-                filetypes = { "go", "gomod", "gowork", "gotmpl" },
-                settings = {
-                    env = {
-                        GOEXPERIMENT = "rangefunc",
-                    },
-                    formatting = {
-                        gofumpt = true,
-                    },
-                },
-            })
             lspconfig.texlab.setup({})
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
             vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
