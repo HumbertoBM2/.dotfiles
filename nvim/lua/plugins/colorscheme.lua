@@ -1,11 +1,12 @@
+function ColorMyGruber()
+    vim.opt.background = "dark"
+    vim.opt.termguicolors = true
+    vim.cmd.colorscheme("gruber-darker")
+
+    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+end
+
 return {
-    {
-        "bluz71/vim-moonfly-colors",
-        lazy = false,
-        priority = 1000,
-        config = function(plugin)
-            vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
-            vim.cmd [[colorscheme moonfly]]
-        end
-    }
+    { "blazkowolf/gruber-darker.nvim", name = "gruber-darker", config = ColorMyGruber },
 }
