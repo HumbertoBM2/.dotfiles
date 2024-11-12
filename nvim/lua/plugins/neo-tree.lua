@@ -1,50 +1,54 @@
 return {
-    "nvim-neo-tree/neo-tree.nvim",
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-        "nvim-tree/nvim-web-devicons",
-        "MunifTanjim/nui.nvim",
-    },
-    keys = {
-        {
-            "<C-n>",
-            function()
-                require("neo-tree.command").execute({
-                    toggle = true,
-                })
-            end,
-            desc = "[NEOTREE] Toggle",
-        },
-    },
-    cmd = { "Neotree" },
-    opts = {
-        enable_git_status = true,
-        enable_diagnostics = true,
-        default_component_configs = {
-            modified = {
-                symbol = "●",
-                highlight = "NeoTreeModified",
+    "nvim-tree/nvim-tree.lua",
+    dependencies = "nvim-tree/nvim-web-devicons",
+    config = function()
+        local nvimtree = require("nvim-tree")
+
+        vim.g.loaded_netrw = 1
+        vim.g.loaded_netrwPlugin = 1
+
+        nvimtree.setup({
+            view = {
+                width = 35,
+                relativenumber = true,
             },
-            git_status = {
-                symbols = {
-                    added = "",
-                    modified = "",
-                    deleted = "",
-                    renamed = "",
-                    untracked = "",
-                    ignored = "",
-                    unstaged = "",
-                    staged = "",
-                    conflict = "",
+            -- change folder arrow icons
+            renderer = {
+                indent_markers = {
+                    enable = true,
+                },
+                icons = {
+                    glyphs = {
+                        folder = {
+                            arrow_closed = "→", -- arrow when folder is closed
+                            arrow_open = "↓", -- arrow when folder is open
+                        },
+                    },
                 },
             },
-        },
-        filesystem = {
-            filtered_items = {
-                visible = false,
-                hide_dotfiles = false,
-                hide_gitignored = false,
+            -- disable window_picker for
+            -- explorer to work well with
+            -- window splits
+            actions = {
+                open_file = {
+                    window_picker = {
+                        enable = false,
+                    },
+                },
             },
-        },
-    },
+            filters = {
+                custom = { ".DS_Store" },
+            },
+            git = {
+                ignore = false,
+            },
+        })
+
+
+        -- set keymaps
+        local keymap = vim.keymap -- for conciseness
+
+        keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
+    end
+
 }
