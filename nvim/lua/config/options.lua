@@ -1,8 +1,5 @@
 vim.cmd("language en_US")
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 vim.opt.errorbells = false
 
 vim.opt.number = true
