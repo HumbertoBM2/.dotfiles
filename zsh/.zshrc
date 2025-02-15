@@ -1,5 +1,6 @@
 # Created by newuser for 5.9
-source /opt/ros/jazzy/setup.zsh
+. ~/ros2_humble/install/local_setup.zsh
+source /opt/ros/humble/setup.zsh
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
